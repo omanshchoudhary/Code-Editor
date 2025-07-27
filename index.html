@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Code Editor
+    </title>
+
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/general.css">
+
+  </head>
+
+  <body>
+
+    <div class="header-toolbar">
+      
+      <button class="new-button">
+        New
+      </button>
+
+      <button class="open-button">
+        Open
+      </button>
+
+      <button class="save-button">
+        Save
+      </button>
+
+      <button class="theme-button">
+        Theme
+      </button>
+
+    </div>
+
+
+    <div class="main">
+
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <p>Explorer</p>
+          <button class="new-file-btn">+</button>
+        </div>
+
+        <div class="file-tree">
+
+          <div class="file-item">
+            <span class="file-icon">📄</span>
+            <span class="file-name">index.html</span>
+          </div>
+
+          <div class="file-item">
+            <span class="file-icon">🎨</span>
+            <span class="file-name">style.css</span>
+          </div>
+
+          <div class="file-item">
+            <span class="file-icon">⚡</span>
+            <span class="file-name">script.js</span>
+            </div>
+
+        </div>
+
+      </div>
+
+      <div class="editor-area">
+        <div class="tabs-container">
+          <div class="tab">
+            <span>index.html</span>
+            <button class="tab-close">×</button>
+          </div>
+          <div class="tab">
+            <span>style.css</span>
+            <button class="tab-close">×</button>
+          </div>
+        </div>
+        <textarea class="coding-area" placeholder="Start coding here..."></textarea>
+          
+      </div>
+
+      <div class="preview-panel">
+        <div class="preview-header">
+          <h3>Live Preview</h3>
+          <button class="refresh-btn">🔄</button>
+        </div>
+        <iframe class="preview-frame"></iframe>
+      </div>
+        
+    </div>
+
+    <div class="footer-status-bar">
+      <div class="status-left">
+        <span>Ln 1, Col 1</span>
+        <span>UTF-8</span>
+      </div>
+      <div class="status-right">
+        <span>HTML</span>
+        <span>100%</span>
+      </div>
+    </div>
+
+  </body>
+
+</html>

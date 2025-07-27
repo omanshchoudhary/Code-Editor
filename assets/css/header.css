@@ -1,0 +1,32 @@
+.header-toolbar{
+  border-bottom: 3px;
+  border-top: 3px;
+  border-left: 0px;
+  border-right: 0px;
+  border-style: solid;
+  border-color: black;
+  background-color: #2d2d2d;
+  padding: 10px;
+  
+  margin-bottom: 0px;
+  padding: 5px;
+  display: flex;
+  column-gap: 3px;
+}  
+
+.header-toolbar button{
+  font-weight: 500;
+  font-size: 17px;
+  color: white;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 15ms;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.header-toolbar button:hover {
+  background-color: #3c3c3c;
+}
+
