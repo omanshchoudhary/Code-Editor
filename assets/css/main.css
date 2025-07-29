@@ -16,10 +16,12 @@
 .sidebar-header{
   margin-top: 0px;
   display: flex;
-  border-bottom: 3px solid black;
+  border-bottom:3px solid black;
   border-top: none;
   padding: 8px 0px 8px 10px;
-  gap: 10px
+  gap: 10px;
+  height: 50px;
+  align-items: center;  
 }
 .editor-area {
   display: flex;
@@ -77,28 +79,111 @@
 
 .file-item{
   display: flex;
-  gap: 10px
+  gap: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.file-item:hover {
+  background: #2a2d2e;
+}
+
+.file-item.selected {
+  background: #094771;
 }
 
 .tabs-container{
   border-bottom: 3px solid black;
   display: flex;
   gap: 20px;
-  padding: 8px;
+  padding: 12px 8px;
+  height: 50px;
+  align-items: center;  
 }
 
 .tab{
-  padding: 5px;
+  padding: 8px 12px;
   display: flex;
-  gap: 10px;
-  border: 1px solid white;
+  gap: 8px;
+  border: none;
+  border-top: 2px solid transparent;
+  cursor: pointer;
+  color: #cccccc;
+  font-size: 13px;
 }
+.tab:hover {
+  background: #1e1e1e;
+}
+
 .tab.active {
   background: #1e1e1e;
-  border-bottom: none;
+  border-top: 2px solid #007acc;
+  color: white;
 }
 
 .file-item:hover {
   background: #2a2d2e;
   cursor: pointer;
+}
+
+.preview-header{
+  background: #1e1e1e;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #3e3e42;
+  margin: -10px -10px 10px -10px;
+  height: 50px;
+}
+
+.preview-header h3 {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+}
+.refresh-btn {
+  background: transparent;
+  border: none;
+  color: #cccccc;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.refresh-btn:hover {
+  background: #3e3e42;
+}
+
+.preview-frame{
+  width: 100%;
+  height: calc(100% - 40px);
+  border: none;
+  background: white;
+  border-radius: 3px;
+
+}
+
+.tab-close{
+  background: transparent;
+  border: none;
+  color: #cccccc;
+  cursor: pointer;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.tab-close:hover {
+  background: #e74c3c;
+  color: white;
 }

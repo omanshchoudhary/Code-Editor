@@ -1,0 +1,37 @@
+.footer-status-bar{
+  background: #007acc;
+  color: white;
+  padding: 4px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  height: 22px;
+  border-top: 1px solid #3e3e42;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.status-left{
+  display: flex;
+  gap: 15px;
+}
+
+.status-right {
+  display: flex;
+  gap: 15px;
+}
+
+.status-left span,
+.status-right span {
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.status-left span:hover,
+.status-right span:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
