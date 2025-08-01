@@ -177,3 +177,46 @@ const renderFileTree=()=>{
         fileTree.appendChild(fileElement);
     });
 };
+
+const handleDeleteFile=()=>{
+    if(!filesDetails.selectedFile) return;
+
+    const fileToDelete=filesDetails.files.find(f=>f.id===filesDetails.selectedFile);
+    if(!fileToDelete) return;
+
+    const confirmDelete = confirm(`Are you sure you want to delete "${fileToDelete.name}"?`);
+    if (!confirmDelete) return;
+
+    filesDetails.files= filesDetails.files.filter(f => f.id !== filesDetails.selectedFile);
+
+    filesDetails.openTabs = filesDetails.openTabs.filter(id => id !== filesDetails.selectedFile);
+
+    if(filesDetails.files.length>0){
+        filesDetails.selectedFile=filesDetails.files[0].id;
+    } else{
+        filesDetails.selectedFile=null;
+    }
+
+    renderFileTree();
+    if (filesDetails.selectedFile) {
+        updateFileSelection();
+        const selectedFile = filesDetails.files.find(f => f.id === filesDetails.selectedFile);
+        updateStatusBar(selectedFile);
+    }
+};
+
+const handleRightClick=(event, fileElement)=>{
+    handleFileClick(fileElement);
+    const fileName = fileElement.querySelector('.file-name').textContent;
+    const action = confirm(`Delete "${fileName}"? Click OK to delete, Cancel to rename.`);
+
+    if (action) {
+        handleDeleteFile();
+    } else {
+        handleRenameFile();
+    }
+};
+
+const handleRenameFile = () => {
+    alert('Rename functionality coming soon!');
+};
