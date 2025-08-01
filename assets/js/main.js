@@ -118,14 +118,14 @@ const getFileIcon=(fileName)=>{
 const getFileType=(fileName)=>{
     const extension= fileName.split('.').pop().toLowerCase();
     const typeMap={
-        'html': '📄',
-        'css': '🎨',
-        'js': '⚡',
-        'json': '📋',
-        'md': '📝',
-        'txt': '📄',
-        'jsx': '⚛️',
-        'ts': '📘'
+        'html': 'html',
+        'css': 'css',
+        'js': 'js',
+        'json': 'json',
+        'md': 'md',
+        'txt': 'txt',
+        'jsx': 'jsx',
+        'ts': 'ts'
     }
     return  typeMap[extension] || 'text';
 };
@@ -144,7 +144,7 @@ const handleNewFile=()=>{
 
     const newFile={
         id:filesDetails.nextId,
-        name:'fileName',
+        name: fileName,
         type: getFileType(fileName),
         content:'',
         isOpen: false,
@@ -163,14 +163,15 @@ const handleNewFile=()=>{
 
 
 const renderFileTree=()=>{
-    const fileTree=document.querySelector('.file-Tree');
+    const fileTree=document.querySelector('.file-tree');
+    fileTree.innerHTML = '';
 
     filesDetails.files.forEach((file)=>{
         const fileElement=document.createElement('div');
         fileElement.className='file-item';
         fileElement.innerHTML=`
-        <span class="${getFileIcon(file.name)}">🎨</span>
-        <span class="file-name">{file.name}</span>
+        <span class="file-icon">${getFileIcon(file.name)}</span>
+        <span class="file-name">${file.name}</span>
         `;
 
         fileTree.appendChild(fileElement);
