@@ -1,0 +1,37 @@
+.main {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  height: 500px;
+  border-bottom: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+}
+.explorer {
+  height: 100%;
+  border: none;
+  border-right: 3px solid black;
+}
+
+.explorer-header {
+  border-bottom: 3px solid black;
+}
+
+.code {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  border-bottom: 3px solid black;
+}
+.code-input{
+  flex: 1;
+  border: none;
+}
+.code-text {
+  
+  border: none;
+  outline: none;
+  resize: none;
+}

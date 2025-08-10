@@ -6,6 +6,7 @@
     <title>Code Editor</title>
     <link rel="stylesheet" href="assets/styles/general.css">
     <link rel="stylesheet" href="assets/styles/header.css">
+    <link rel="stylesheet" href="assets/styles/main.css">
   </head>
 
   <body>
@@ -16,13 +17,31 @@
       <button class="btn">Run</button>
       <button class="btn">Terminal</button>
     </div>
-    <div class="main">
-      <div class="Explorer"></div>
-      <div class=""></div>
-      <div class="Explorer"></div>
-    </div>
-    <div class="footer">
 
+    <div class="main">
+
+      <div class="explorer">
+        <div class="explorer-header">
+          Project Name
+        </div>
+
+        <div class="file-tree">
+          html.css
+        </div>
+      </div>
+
+      <div class="code">
+        <div class="tabs">
+          <button>HTML.css</button>
+        </div>
+        <div class="code-input">
+          <textarea class="code-text" placeholder="Enter your code here"></textarea>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="footer">
     </div>
   </body>
 </html>
