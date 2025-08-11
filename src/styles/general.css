@@ -8,4 +8,6 @@ body{
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #2d2a2e; 
+    color: #fcfcfa; 
 }

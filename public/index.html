@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code Editor</title>
-    <link rel="stylesheet" href="assets/styles/general.css">
-    <link rel="stylesheet" href="assets/styles/header.css">
-    <link rel="stylesheet" href="assets/styles/main.css">
-    <link rel="stylesheet" href="assets/styles/footer.css">
+    <link rel="stylesheet" href="../src//styles/general.css">
+    <link rel="stylesheet" href="../src//styles/header.css">
+    <link rel="stylesheet" href="../src//styles/main.css">
+    <link rel="stylesheet" href="../src//styles/footer.css">
   </head>
 
   <body>
@@ -23,32 +23,38 @@
 
       <div class="explorer">
         <div class="explorer-header">
-          Project Name
+          <span>Explorer</span>
+          <div class="explorer-actions">
+            <button class="explorer-action-btn" title="New File">+</button>
+            <button class="explorer-action-btn" title="Refresh">&#x21bb;</button>
+          </div>
         </div>
 
         <div class="file-tree">
-          html.css
+          <div class="file-item">index.html</div>
         </div>
       </div>
 
       <div class="coding-area">
+
         <div class="tab-bar">
           <button>HTML.css</button>
         </div>
+
         <div class="code-input">
           <textarea class="code-text" placeholder="Enter your code here"></textarea>
         </div>
+        
         <div class="terminal">
           <div class="terminal-bar">
             <button>Input</button>
             <button>Output</button>
           </div>
           <div class="terminal-content">
-
           </div>
         </div>
+        
       </div>
-      
     </div>
 
     <div class="footer">
