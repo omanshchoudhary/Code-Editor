@@ -1,13 +1,15 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
 }
 
 body{
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #2d2a2e; 
-    color: #fcfcfa; 
+    background: #0d1117;
+    color: #f0f6fc;
+    overflow: hidden;
 }

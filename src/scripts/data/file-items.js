@@ -1,24 +1,4 @@
-export const files=[
-    {
-        id:1,
-        name: 'index',
-        extension: 'html',
-        status: true
+export const files=JSON.parse(localStorage.getItem('files')) ||  [];
+    
 
-    },
-    {
-        id:2,
-        name: 'main',
-        extension: 'css',
-        status: true
-
-    },
-    {
-        id:2,
-        name: 'main',
-        extension: 'css',
-        status: true
-
-    }
-];
 
