@@ -7,6 +7,8 @@
   border-right: 3px solid black;
 }
 .explorer {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   border: none;
   border-right: 3px solid black;
@@ -15,7 +17,9 @@
 .explorer-header {
   border-bottom: 3px solid black;
 }
-
+.file-tree{
+  flex: 1;
+}
 .code {
   height: 100%;
   display: flex;
@@ -30,8 +34,12 @@
   border: none;
 }
 .code-text {
-  
+
+  width: 100%;
+  height: 100%;
+  padding: 4px;
   border: none;
   outline: none;
   resize: none;
+  box-sizing: border-box;
 }
