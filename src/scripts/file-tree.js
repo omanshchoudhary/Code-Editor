@@ -6,7 +6,8 @@ export function renderFileTree(files) {
   const fileTree = document.querySelector(".js-file-tree");
 
   files.forEach((file) => {
-    html += `<div class="file-item" data-id="${file.id}">${file.name}.${file.extension}</div>`;
+    const isActive = file.id === activeFileId ? 'active' : '';
+    html += `<div class="file-item ${isActive}" data-id="${file.id}">${file.name}.${file.extension}</div>`;
   });
   fileTree.innerHTML = html;
 }
@@ -33,17 +34,38 @@ export function setupFileTreeEvents(files) {
     if(!fileObject) return;
     setActiveFileId(fileObject.dataset.id);
     renderCode(fileObject.dataset.id);
+    updateActiveStates();
   })
 }
 
+function updateActiveStates() {
+  // Update file tree active state
+  document.querySelectorAll('.file-item').forEach(item => {
+    item.classList.remove('active');
+    if(item.dataset.id === activeFileId) {
+      item.classList.add('active');
+    }
+  });
+  
+  // Update tabs active state
+  document.querySelectorAll('.file-tab').forEach(tab => {
+    tab.classList.remove('active');
+    if(tab.dataset.id === activeFileId) {
+      tab.classList.add('active');
+    }
+  });
+}
+
+export { updateActiveStates };
+
 function handleNewFileCreation(files) {
-  const fileName = prompt("Enter file name:");
-  const fileExt = prompt("Enter file extension:");
+  const fileName = prompt("Enter file name:").split(".");
+  
 
   const newFile = {
     id: crypto.randomUUID(),
-    name: fileName,
-    extension: fileExt,
+    name: fileName[0],
+    extension: fileName[1],
     content:'',
   };
 
@@ -52,6 +74,7 @@ function handleNewFileCreation(files) {
   localStorage.setItem("files", JSON.stringify(files));
   renderFileTree(files);
   renderTabs(files);
+  updateActiveStates();
 }
 
 function handleFileDeletion(files,fileObject) {
@@ -68,7 +91,7 @@ function handleFileDeletion(files,fileObject) {
 
 }
 
-function renderCode(fileId){
+export function renderCode(fileId){
   const code=document.querySelector('.code-text');
   const file = files.find(f => f.id === fileId);
   if(file){

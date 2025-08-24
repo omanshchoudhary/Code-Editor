@@ -65,14 +65,26 @@
   margin: 1px 8px;
   padding: 4px 8px; 
   border-radius: 4px;
-  transition: background 0.2s ease;
+  transition: all 0.15s ease;
   color: #e6edf3;
   cursor: pointer;
+  position: relative;
 }
 
 .file-item:hover {
   background: #21262d;
   color: #f0f6fc;
+}
+
+.file-item.active {
+  background: #2d333b;
+  color: #ffffff;
+  font-weight: 500;
+  border-left: 2px solid #58a6ff;
+}
+
+.file-item.active:hover {
+  background: #373e47;
 }
 
 .file-item::before {
@@ -103,15 +115,29 @@
   color: #e6edf3;
   font-size: 12px;
   font-weight: 400;
-  padding: 4px 12px;
-  border-radius: 4px;
+  padding: 6px 16px;
+  border-radius: 4px 4px 0 0;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.15s ease;
+  position: relative;
+  margin-right: 1px;
+  border-bottom: 2px solid transparent;
 }
 
 .tab-bar button:hover {
   background: #21262d;
   color: #f0f6fc;
+}
+
+.file-tab.active {
+  background: #2d333b;
+  color: #ffffff;
+  font-weight: 500;
+  border-bottom: 2px solid #58a6ff;
+}
+
+.file-tab.active:hover {
+  background: #373e47;
 }
 
 .code-input{
