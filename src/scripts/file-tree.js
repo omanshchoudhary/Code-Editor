@@ -1,4 +1,4 @@
-import { files} from "./data/file-items.js";
+import { files, activeFileId, setActiveFileId} from "./data/file-items.js"
 import { renderTabs } from "./tabs-bar.js";
 
 export function renderFileTree(files) {
@@ -27,6 +27,13 @@ export function setupFileTreeEvents(files) {
       handleFileDeletion(files, fileObject);
     }
   });
+
+  document.addEventListener("click",(event)=>{
+    const fileObject= event.target.closest('.file-item');
+    if(!fileObject) return;
+    setActiveFileId(fileObject.dataset.id);
+    renderCode(fileObject.dataset.id);
+  })
 }
 
 function handleNewFileCreation(files) {
@@ -37,9 +44,10 @@ function handleNewFileCreation(files) {
     id: crypto.randomUUID(),
     name: fileName,
     extension: fileExt,
-    status: true,
+    content:'',
   };
 
+  setActiveFileId(newFile.id);
   files.push(newFile);
   localStorage.setItem("files", JSON.stringify(files));
   renderFileTree(files);
@@ -58,4 +66,12 @@ function handleFileDeletion(files,fileObject) {
   renderFileTree(files);
   renderTabs(files);
 
+}
+
+function renderCode(fileId){
+  const code=document.querySelector('.code-text');
+  const file = files.find(f => f.id === fileId);
+  if(file){
+    code.value = file.content || '';
+  }
 }
